@@ -1,0 +1,15 @@
+<style>
+    .blue{
+        background-color: blue;
+    }
+    .nocolor{
+        background-color: antiquewhite;
+    }
+</style>
+
+
+<button type="button" (click)="increase()">Display Details</button>
+<p>{{para}}</p>
+<ul *ngFor="let i of array">
+    <li [ngClass]="i >= 5 ? 'blue' : 'nocolor'">{{i}}</li>
+</ul>
