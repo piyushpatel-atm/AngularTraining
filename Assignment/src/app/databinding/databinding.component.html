@@ -1,0 +1,8 @@
+<p>databinding works!</p>
+
+<label>UserName : </label><br>
+<input type="text" [(ngModel)]="username"><br>
+<br>
+<i>{{username}}</i>
+<br><br>
+<button type="button"  (click)="onclicked()" [disabled]="!username">Reset</button>
