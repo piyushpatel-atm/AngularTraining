@@ -1,0 +1,63 @@
+<div class="container">
+    <h1>Form 1</h1>
+    <form [formGroup]="studform">
+        <div class="form-group">
+            <label for="email"><b>Email :- </b></label>
+            <input type="email" required class="form-control" name="email" id="email" formControlName="email"  placeholder="email">
+            <div style="color: red;" *ngIf="studform.controls['email'].touched && studform.controls['email'].invalid">
+                <span *ngIf="studform.controls['email'].hasError('required')">email is required</span>
+                <span *ngIf="studform.controls['email'].hasError('email')">Inavlid email</span>
+                <span *ngIf="studform.controls['email'].touched && studform.controls['email'].invalid  && !studform.controls['email'].hasError('required')"></span>
+            </div>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="password"><b>Password :-</b></label>
+            <input type="password"  class="form-control" name="password" formControlName="password" placeholder="password" required >
+            <span style="color: red;" *ngIf="studform.controls['password'].touched && studform.controls['password'].hasError('required')">Password is required</span>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="subs"><b>Subscription :- </b></label><br>
+            <select name="subs" formControlName="subs" class="form-control" required>
+                <option value="Advance">Advance</option>
+                <option value="Basic">Basic</option>
+                <option value="pro">Pro</option>
+            </select>
+            <span style="color: red;" *ngIf="studform.controls['subs'].touched && studform.controls['subs'].hasError('required')">subscription is required</span>
+        </div>
+        <pre></pre>
+        <button class="btn btn-primary" type="submit" (click)="submit()">Submit</button>
+    </form>
+    <br>
+    <button class="btn btn-danger" (click)="clickme()">view</button><br>
+
+    <table class="table table-hover  table-striped">
+
+        <thead class="thead-dark">
+    
+          <th scope="col">Mail</th>
+    
+          <th scope="col">Subscription</th>
+    
+          <th scope="col">Password</th>
+    
+        </thead>
+    
+    <tbody>
+    
+        <tr *ngFor="let e of array2">
+    
+          <td>{{ e.mail }}</td>
+    
+          <td>{{ e.subs }}</td>
+    
+          <td>{{ e.password }}</td>
+    
+        </tr>
+    
+      </tbody>
+    
+      </table>
+
+</div>

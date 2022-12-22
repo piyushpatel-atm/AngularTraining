@@ -1,0 +1,9 @@
+.container{
+    margin: auto;
+    width: 50%;
+}
+h1{
+    text-align: center;
+    color: blue;
+    font-size: 50px;
+}

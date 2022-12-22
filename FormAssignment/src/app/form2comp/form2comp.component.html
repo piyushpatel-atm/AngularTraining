@@ -1,0 +1,44 @@
+
+    <div class="container">
+        <h1>Form2</h1>
+        <form [formGroup]="studentform" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label><b>Project Name:</b></label>
+                <input type="text" placeholder="name" formControlName="sname" [pattern]="namepattern" class="form-control">
+                <div style="color: red;"
+                    *ngIf="studentform.controls['sname'].touched && studentform.controls['sname'].invalid">
+                    <span *ngIf="studentform.controls['sname'].hasError('required')">name is required</span>
+                    <span *ngIf="studentform.controls['sname'].hasError('pattern')">only alphabate with
+                        space between 2 to 20 charecters
+                    </span>
+                </div>
+            </div><br>
+            <div class="form-group">
+                <label for="status"><b>Project status: </b></label>
+                <select formControlName="status" class="form-control" required>
+                    <option value="stable"> <b>Stable</b></option>
+                    <option value="critical">Critical</option>
+                    <option value="finished">Finished</option>
+                </select>
+                <span style="color: red;" *ngIf="studentform.controls['status'].touched && studentform.controls['status'].hasError('required')">status is required</span>
+
+            </div><br>
+            <div class="form-group">
+                <label for="email"><b>Email: </b></label>
+                <input type="email" placeholder="email" formControlName="email" required class="form-control">
+                <div style="color: red;"
+                    *ngIf="studentform.controls['email'].touched && studentform.controls['email'].invalid">
+                    <span *ngIf="studentform.controls['email'].hasError('required')">email is required</span>
+                    <span *ngIf="studentform.controls['email'].hasError('email')">inavlid email</span>
+                    <span
+                        *ngIf="studentform.controls['email'].touched && studentform.controls['email'].invalid  && !studentform.controls['email'].hasError('required')">Invali
+                        email</span>
+                </div>
+            </div><br>
+
+            <div>
+                <input type="submit" value="submit" class="btn btn-success">
+            </div>
+        </form>
+    </div>
