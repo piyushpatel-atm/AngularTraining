@@ -1,0 +1,25 @@
+.container{
+    margin: 100px;
+}
+    
+marquee{
+    position: relative;
+    top: 40%;
+    font-size: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.imag{
+    height: 200px;
+    width: 100%;
+    background-image: url(https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg);
+    padding: 15px;
+    top:15px;
+    box-shadow: 12px 12px 12px rgb(49, 46, 46);
+    color: azure;
+    text-align: center;
+}
+.comp{
+    padding-top: 20px;
+    
+}

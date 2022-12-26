@@ -1,0 +1,15 @@
+.container{
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    background-color: rgb(105, 105, 105,0.1);
+    box-shadow: 15px 15px 15px gray;
+    
+}
+.inputfield{
+    background: rgba(255,255,255,0.4);
+    box-shadow: 15px 15px 15px gray;
+}
+input{
+    border-radius: 20px;
+}

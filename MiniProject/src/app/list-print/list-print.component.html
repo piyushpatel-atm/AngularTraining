@@ -1,0 +1,30 @@
+
+    <div style="box-shadow: 20px 20px 20px gray;">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of array" style="box-shadow: 20px 20px 20px rgb(137, 133, 133);">
+                    <td scope="row">{{i.id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.mobNo}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.city}}</td>
+                    <td>{{i.gender}}</td>
+                    <td><button class="btn btn-warning" (click)="updateEmp(i)" ><i class="fa fa-edit"></i></button></td>
+                    <td><button class="btn btn-danger" (click)="deleteEmp(i.id)"><i class="fa fa-trash"></i></button></td>
+                </tr>
+                <tr>
+            </tbody>
+        </table>
+    </div>
