@@ -1,0 +1,10 @@
+.formclass{
+    text-align: center;
+    margin: auto;
+    padding-top: 30px;
+    height: 600px;
+    width: 400px;
+    background-color: gray;
+    box-shadow: 12px 12px 12px gray;
+}
+
