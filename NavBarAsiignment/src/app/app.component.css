@@ -1,0 +1,11 @@
+mat-sidenav-container{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9S_Mk7e_qB-iW4tureT_ectfkl6fYkN0Ry8PzNLuQUGb1j-BMsBn_QHhvaqq139Xkpbg&usqp=CAU");
+   background-repeat: no-repeat;
+    background-size: cover;
+    color: blue;
+}
+div{
+    text-align: center;
+    margin-top: 300px;
+    font-size: larger;
+}

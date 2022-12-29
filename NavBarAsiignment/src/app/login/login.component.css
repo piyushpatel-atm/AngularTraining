@@ -1,0 +1,18 @@
+.formclass{
+    margin-top: 30px;
+    text-align: center;
+    margin-left: 300px;
+    padding-top: 20px;
+    height: 500px;
+    width:800px;
+    background-color: #d5cfcf;
+    color: rgba(146, 142, 137, 0.721);
+    box-shadow: 12px 12px 12px gray;
+}
+mat-form-field{
+    width: 400px;
+    border-radius: 300px;
+}
+form{
+    padding: 60px;
+}

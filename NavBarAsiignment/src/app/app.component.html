@@ -1,0 +1,53 @@
+<mat-sidenav-container fullscreen>
+<mat-sidenav #sidenav>
+  <mat-nav-list (click)="sidenav.close()" style="background-color: rgb(205, 123, 123);">
+      <a mat-button [matMenuTriggerFor]="list">
+          <mat-icon matTextSuffix>list</mat-icon>
+          <span>CourseList</span>
+      </a><br>
+      <mat-menu #list>
+        <ul *ngFor="let i of array" >
+          <li mat-menu-item>{{i}}</li>
+        </ul>
+      </mat-menu>
+      <a mat-button routerLink="addcourse">
+        <mat-icon>add</mat-icon>
+        Add Course
+      </a>
+     
+     
+  </mat-nav-list>
+</mat-sidenav>
+<mat-toolbar color="warn">
+  <button mat-icon-button (click)="sidenav.open()" >
+      <mat-icon>menu</mat-icon>
+  </button>
+  <a mat-button [matMenuTriggerFor]="dropdown">
+      About Us
+  </a>
+  <mat-menu #dropdown>
+    <button mat-menu-item routerLink="ceomessage">CEO Message</button>
+    <button mat-menu-item routerLink="contact">Contact</button>
+  </mat-menu>
+  <!-- <a mat-button routerLink="">
+    <mat-icon>about</mat-icon>
+    About
+  </a> -->
+  <a mat-button routerLink="">
+    <mat-icon>home</mat-icon>
+    Home
+  </a>
+  <a mat-button routerLink="register">
+      <mat-icon>person_add</mat-icon>
+      Register
+  </a>
+  <a mat-button routerLink="login">
+      <mat-icon>account_circle</mat-icon>
+      Login
+  </a>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+</mat-sidenav-container>
+<div><h1>WelCome To Yash Technologies<br>Crystal IT Park<br>Indore</h1></div>
+
