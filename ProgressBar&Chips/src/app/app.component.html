@@ -1,0 +1,62 @@
+<div style="display: inline-block;">
+<div style="width: 400px;">
+  <h1>Progress bar</h1>
+  <div class="outerdiv">
+    <h2>Indeterminate Progress Bar</h2>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar><br>
+  </div>
+  <div  class="outerdiv">
+    <h2>Determinate Progress Bar</h2>
+    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar><br>
+  </div>
+  <div  class="outerdiv">
+    <h2>Query Progress Bar</h2>
+    <mat-progress-bar mode="query"></mat-progress-bar><br>
+  </div>
+  <div  class="outerdiv">
+    <h2>Buffer Progress Bar</h2>
+    <mat-progress-bar mode="buffer"></mat-progress-bar><br>
+  </div>
+
+</div>
+
+<div style="width: 400px;">
+  <h1>Hobbies</h1>
+  <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Color selection" *ngFor="let c of colors">
+
+    <mat-chip-option  [color]="c.color" *ngIf='c.name=="Dancing"' selected>
+
+      {{c.name}}
+
+    </mat-chip-option>
+    <mat-chip-option  [color]="c.color" *ngIf='c.name!="Dancing"'>
+
+      {{c.name}}
+
+    </mat-chip-option>
+
+   
+
+  </mat-chip-listbox>
+
+</div>
+<div style="width: 400px;">
+  <h1>Divider</h1>
+  <mat-list>
+
+      <mat-list-item>Cricket</mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <mat-list-item>Football</mat-list-item>
+
+      <mat-divider></mat-divider>
+      <mat-list-item>Football</mat-list-item>
+      <mat-divider></mat-divider>
+
+  </mat-list>
+
+
+
+</div>
+</div>
