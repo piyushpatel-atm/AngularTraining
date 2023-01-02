@@ -1,0 +1,82 @@
+<div class="formclass">
+    
+    <form [formGroup]="emp" (ngSubmit)="submit()">
+        <h1 style="color: black;">Register</h1><br>
+        <mat-form-field>
+            <input matInput placeholder="FullName" apperance="fill" formControlName="fullName">
+            <mat-icon matTextSuffix>person</mat-icon>
+            <mat-label>FullName</mat-label>
+            <mat-error *ngIf="this.emp.controls['fullName'].hasError('required')">required</mat-error>
+            <mat-error *ngIf="this.emp.controls['fullName'].hasError('minlength')">min 6 length required</mat-error>
+            <mat-error *ngIf="this.emp.controls['fullName'].hasError('maxlength')">mxn 32 length required</mat-error>
+
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="EmailId" apperance="fill" formControlName="emailId">
+            <mat-icon matTextSuffix>email</mat-icon>
+            <mat-label>EmailId</mat-label>
+            <mat-error *ngIf="this.emp.controls['emailId'].hasError('required')">required</mat-error>
+            <mat-error *ngIf="this.emp.controls['emailId'].hasError('email')">Email is Invalid</mat-error>
+        </mat-form-field><br>
+        <mat-form-field>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <mat-label>Password</mat-label>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="this.emp.controls['password'].hasError('required')">required</mat-error>
+            <mat-error *ngIf="this.emp.controls['password'].hasError('pattern')">pattern invalid</mat-error>
+            <mat-error *ngIf="this.emp.controls['password'].hasError('minlength')">min 5 length required</mat-error>
+            <mat-error *ngIf="this.emp.controls['password'].hasError('maxlength')">mxn 16 length required</mat-error>
+
+
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="User Name" apperance="fill" formControlName="username">
+            <mat-icon matTextSuffix>people</mat-icon>
+            <mat-label>UserName</mat-label>
+            <mat-error *ngIf="this.emp.controls['username'].hasError('required')">required</mat-error>
+        </mat-form-field><br>
+        <mat-radio-group aria-label="Select an option" formControlName="gender" required>
+            <mat-label style="color: black;">Gender</mat-label>
+            <mat-radio-button value="M">Male</mat-radio-button>
+            <mat-icon matIconSuffix>male</mat-icon>
+            <mat-radio-button value="F">Female</mat-radio-button>
+            <mat-icon matIconSuffix>female</mat-icon>
+            <mat-error *ngIf="this.emp.controls['gender'].hasError('required')">Gender required</mat-error>
+        </mat-radio-group><br>
+        <mat-form-field>
+            <input matInput placeholder="Mobile Number" apperance="fill" formControlName="mobNo">
+            <mat-icon matTextSuffix>dialpad</mat-icon>
+            <mat-label>Enter Mobile Number</mat-label>
+            <mat-error *ngIf="this.emp.controls['mobNo'].hasError('required')">required</mat-error>
+            <mat-error *ngIf="this.emp.controls['mobNo'].hasError('pattern')">Number is Invalid</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dob">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="this.emp.controls['dob'].hasError('required')">required</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Skills</mat-label>
+            <mat-select formControlName="skill">
+                <mat-option>None</mat-option>
+                <mat-option value="Angular Basic">Angular Basic</mat-option>
+                <mat-option value="Angular Intermediate">Angular Intermediate</mat-option>
+                <mat-option value="Angular Advance">Angular Advance</mat-option>
+            </mat-select>
+            <mat-error *ngIf="this.emp.controls['skill'].hasError('required')">required</mat-error>
+        </mat-form-field><br>
+      
+
+
+        <button mat-raised-button color="warn" type="submit">submit</button>
+
+    </form>
+
+<router-outlet></router-outlet>
+</div>

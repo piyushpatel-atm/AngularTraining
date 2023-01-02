@@ -1,0 +1,12 @@
+div{
+    text-align: center;
+    margin: auto;
+    padding-top: 200px;
+}
+h1{
+    font-size: 80px;
+}
+.outerdiv{
+    height: 600px;
+    width: 400px;
+}

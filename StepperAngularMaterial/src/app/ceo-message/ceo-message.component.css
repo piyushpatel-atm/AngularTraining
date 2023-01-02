@@ -1,0 +1,11 @@
+.formclass {
+    margin-top: 30px;
+    margin-left: 300px;
+    padding-top: 20px;
+    height: 700px;
+    width:900px;
+    background-color: #d5cfcf;
+    color: rgba(146, 142, 137, 0.721);
+    box-shadow: 12px 12px 12px gray;
+    /* background-image: url("https://wallpapercave.com/wp/wp3028212.jpg") */
+}

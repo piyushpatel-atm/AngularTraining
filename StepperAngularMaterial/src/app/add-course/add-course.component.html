@@ -1,0 +1,155 @@
+<div class="outerdiv">
+    <mat-stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Name Form</ng-template>
+                <mat-form-field>
+                    <input matInput placeholder="FullName" apperance="fill" formControlName="fullName">
+                    <mat-icon matTextSuffix>person</mat-icon>
+                    <mat-label>FullName</mat-label>
+                    <mat-error
+                        *ngIf="this.firstFormGroup.controls['fullName'].hasError('required')">required</mat-error>
+                    <mat-error *ngIf="this.firstFormGroup.controls['fullName'].hasError('minlength')">min 6 length
+                        required</mat-error>
+                    <mat-error *ngIf="this.firstFormGroup.controls['fullName'].hasError('maxlength')">mxn 32 length
+                        required</mat-error>
+
+                </mat-form-field><br>
+                <mat-form-field>
+                    <input matInput placeholder="EmailId" apperance="fill" formControlName="emailId">
+                    <mat-icon matTextSuffix>email</mat-icon>
+                    <mat-label>EmailId</mat-label>
+                    <mat-error *ngIf="this.firstFormGroup.controls['emailId'].hasError('required')">required</mat-error>
+                    <mat-error *ngIf="this.firstFormGroup.controls['emailId'].hasError('email')">Email is
+                        Invalid</mat-error>
+                </mat-form-field><br>
+                <mat-form-field>
+                    <input matInput placeholder="FatherName" apperance="fill" formControlName="fatherName">
+                    <mat-icon matTextSuffix>person</mat-icon>
+                    <mat-label>FatherName</mat-label>
+                    <mat-error
+                        *ngIf="this.firstFormGroup.controls['fatherName'].hasError('required')">required</mat-error>
+                    <mat-error *ngIf="this.firstFormGroup.controls['fatherName'].hasError('minlength')">min 6 length
+                        required</mat-error>
+                    <mat-error *ngIf="this.firstFormGroup.controls['fatherName'].hasError('maxlength')">mxn 32 length
+                        required</mat-error>
+
+                </mat-form-field><br>
+                <mat-form-field>
+                    <input matInput placeholder="MotherName" apperance="fill" formControlName="motherName">
+                    <mat-icon matTextSuffix>person</mat-icon>
+                    <mat-label>MotherName</mat-label>
+                    <mat-error
+                        *ngIf="this.firstFormGroup.controls['motherName'].hasError('required')">required</mat-error>
+                    <mat-error *ngIf="this.firstFormGroup.controls['motherName'].hasError('minlength')">min 6 length
+                        required</mat-error>
+                    <mat-error *ngIf="this.firstFormGroup.controls['motherName'].hasError('maxlength')">mxn 32 length
+                        required</mat-error>
+
+                </mat-form-field><br>
+                <mat-radio-group aria-label="Select an option" formControlName="gender" required>
+                    <mat-label style="color: black;">Gender</mat-label>
+                    <mat-radio-button value="M">Male</mat-radio-button>
+                    <mat-icon matIconSuffix>male</mat-icon>
+                    <mat-radio-button value="F">Female</mat-radio-button>
+                    <mat-icon matIconSuffix>female</mat-icon>
+                    <mat-error *ngIf="this.firstFormGroup.controls['gender'].hasError('required')">Gender
+                        required</mat-error>
+                </mat-radio-group><br>
+                <mat-form-field>
+                    <input matInput placeholder="Mobile Number" apperance="fill" formControlName="mobNo">
+                    <mat-icon matTextSuffix>dialpad</mat-icon>
+                    <mat-label>Enter Mobile Number</mat-label>
+                    <mat-error *ngIf="this.firstFormGroup.controls['mobNo'].hasError('required')">required</mat-error>
+                    <mat-error *ngIf="this.firstFormGroup.controls['mobNo'].hasError('pattern')">Number is
+                        Invalid</mat-error>
+                </mat-form-field><br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Date Of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dob">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="this.firstFormGroup.controls['dob'].hasError('required')">required</mat-error>
+                </mat-form-field><br>
+                    <button mat-raised-button matStepperNext color="warn">Next</button>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="firstFormGroup" label="Address">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Name Form</ng-template>
+                <mat-form-field>
+                    <input matInput placeholder="AccountNo" apperance="fill" formControlName="accountNo">
+                    <mat-icon matTextSuffix>number</mat-icon>
+                    <mat-label>AccountNo</mat-label>
+
+
+                </mat-form-field><br>
+                <mat-form-field>
+                    <input matInput placeholder="BankName" apperance="fill" formControlName="bankName">
+                    <mat-icon matTextSuffix>name</mat-icon>
+                    <mat-label>BankName</mat-label>
+
+
+                </mat-form-field><br>
+                <mat-form-field>
+                    <input matInput placeholder="IfscCode" apperance="fill" formControlName="ifscCode">
+                    <mat-icon matTextSuffix>code</mat-icon>
+                    <mat-label>IfscCode</mat-label>
+
+
+                </mat-form-field><br>
+                <mat-radio-group aria-label="Select an option" formControlName="netBank" required>
+                    <mat-label style="color: black;">NetBanking</mat-label>
+                    <mat-radio-button value="Yes">Yes</mat-radio-button>
+                    <mat-icon matIconSuffix>no</mat-icon>
+                    <mat-radio-button value="No">No</mat-radio-button>
+
+                </mat-radio-group><br>
+                <mat-radio-group aria-label="Select an option" formControlName="mobBank" required>
+                    <mat-label style="color: black;">MobileBanking</mat-label>
+                    <mat-radio-button value="Yes">Yes</mat-radio-button>
+                    <mat-icon matIconSuffix>no</mat-icon>
+                    <mat-radio-button value="No">No</mat-radio-button>
+
+                </mat-radio-group><br>
+                
+                    <button mat-raised-button matStepperPrevious color="warn">Prev</button>
+                    <button mat-raised-button matStepperNext color="warn">Next</button>
+                
+            </form>
+        </mat-step>
+        <mat-step>
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Name Form</ng-template>
+                <mat-form-field>
+                    <input matInput placeholder="PermanentAddress" apperance="fill" formControlName="permanentAddress" [(ngModel)]="value" (ngModelChange)="valueChange(value)" maxlength="60">
+                    <mat-icon matTextSuffix>address</mat-icon>
+                    <mat-label>PermanentAddress</mat-label>
+                    <span>{{remainingText}}</span>
+
+
+                </mat-form-field><br>
+                <mat-form-field>
+                    <input matInput placeholder="PresentAddress" apperance="fill" formControlName="presentAddress" [(ngModel)]="value2" (ngModelChange)="valueChange2(value2)" maxlength="60">
+                    <mat-icon matTextSuffix>address</mat-icon>
+                    <mat-label>PresentAddress</mat-label>
+                    <span>{{remainingText2}}</span>
+
+
+                </mat-form-field><br>
+              
+
+                
+                    <button mat-raised-button matStepperPrevious color="warn">Prev</button>
+                    <button mat-raised-button matStepperNext (click)="submit()" color="primary">Submit</button>
+            
+            </form>
+        </mat-step>
+
+
+
+
+
+    </mat-stepper>
+</div>
